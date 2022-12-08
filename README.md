@@ -1,2 +1,2 @@
-# SOLID
- Refatoração do sistema de leilões com os principios SOLID
+# Projeto para o curso de SOLID com CSharp
+
