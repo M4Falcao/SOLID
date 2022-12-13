@@ -21,15 +21,14 @@ namespace Alura.LeilaoOnline.WebApp.Controllers
 
         public IActionResult Index()
         {
-            var leiloes = _context.Leiloes
-                .Include(l => l.Categoria);
+            var leiloes = _dao.Index();
             return View(leiloes);
         }
 
         [HttpGet]
         public IActionResult Insert()
         {
-            ViewData["Categorias"] = _context.Categorias.ToList();
+            ViewData["Categorias"] = _dao.BuscarCategorias();
             ViewData["Operacao"] = "Inclusão";
             return View("Form");
         }

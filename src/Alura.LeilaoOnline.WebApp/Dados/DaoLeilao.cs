@@ -15,6 +15,12 @@ namespace Alura.LeilaoOnline.WebApp.Dados
         {
             _context = new AppDbContext();
         }
+        public IEnumerable<Leilao> Index()
+        {
+            var leiloes = _context.Leiloes
+                .Include(l => l.Categoria);
+            return leiloes;
+        }
         public IEnumerable<Categoria> BuscarCategorias()
         {
             return _context.Categorias.ToList();

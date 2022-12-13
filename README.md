@@ -20,4 +20,11 @@ Experiência de outros devs:
    Ao escrever um módulo de software você precisa garantir que quando as mudanças forem solicitadas, elas só originem de uma pessoa ou grupo de pessoas representando uma função de negócio específica.
    ´´´
 
-   
+### Dependency inversion principle
+
+Como analiso as dependências de uma classe? Vendo quais metodos e propriedades ela usa de outras classes
+Qual a diferença entre acoplamento bom e ruim? bom dificilmente vai ser alterado
+O que são classes instáveis? classes que dependem de classes que podem ser alteradas e dependem de classes que dependem de outras classes
+Que estratégias utilizo para minimizar os acoplamentos ruins?
+De que maneira o AspNet Core ajuda a minimizar o acoplamento de nossos controladores e tipos em geral?
+
