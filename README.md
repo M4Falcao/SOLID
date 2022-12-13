@@ -22,9 +22,15 @@ Experiência de outros devs:
 
 ### Dependency inversion principle
 
+![image](https://user-images.githubusercontent.com/73663282/207467654-699bd250-7cac-499a-8d42-1bba71a10f4d.png)
+
 Como analiso as dependências de uma classe? Vendo quais metodos e propriedades ela usa de outras classes
+
 Qual a diferença entre acoplamento bom e ruim? bom dificilmente vai ser alterado
+
 O que são classes instáveis? classes que dependem de classes que podem ser alteradas e dependem de classes que dependem de outras classes
+
 Que estratégias utilizo para minimizar os acoplamentos ruins?
+
 De que maneira o AspNet Core ajuda a minimizar o acoplamento de nossos controladores e tipos em geral?
 
