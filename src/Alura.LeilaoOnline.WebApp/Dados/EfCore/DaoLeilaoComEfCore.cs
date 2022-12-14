@@ -5,13 +5,13 @@ using System.Threading.Tasks;
 using Alura.LeilaoOnline.WebApp.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace Alura.LeilaoOnline.WebApp.Dados
+namespace Alura.LeilaoOnline.WebApp.Dados.EfCore
 {
-    public class DaoLeilao
+    public class DaoLeilaoComEfCore : ILeilaoDao
     {
         // CLASSE DE OPERAÇÕES E ACESSOS AOS DADOS
         AppDbContext _context;
-        public DaoLeilao()
+        public DaoLeilaoComEfCore()
         {
             _context = new AppDbContext();
         }
@@ -19,6 +19,17 @@ namespace Alura.LeilaoOnline.WebApp.Dados
         {
             var leiloes = _context.Leiloes
                 .Include(l => l.Categoria);
+            return leiloes;
+        }
+        public IEnumerable<Leilao> Pesquisa(string termo)
+        {
+            var leiloes = _context.Leiloes
+                .Include(l => l.Categoria)
+                .Where(l => string.IsNullOrWhiteSpace(termo) ||
+                    l.Titulo.ToUpper().Contains(termo.ToUpper()) ||
+                    l.Descricao.ToUpper().Contains(termo.ToUpper()) ||
+                    l.Categoria.Descricao.ToUpper().Contains(termo.ToUpper())
+                );
             return leiloes;
         }
         public IEnumerable<Categoria> BuscarCategorias()

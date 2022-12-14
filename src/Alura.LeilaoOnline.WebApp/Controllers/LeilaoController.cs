@@ -11,12 +11,11 @@ namespace Alura.LeilaoOnline.WebApp.Controllers
     public class LeilaoController : Controller
     {
 
-        AppDbContext _context;
-        DaoLeilao _dao;
+        ILeilaoDao _dao;
 
-        public LeilaoController()
+        public LeilaoController(ILeilaoDao dao)
         {
-            _context = new AppDbContext();
+            _dao = dao;
         }
 
         public IActionResult Index()
@@ -107,13 +106,7 @@ namespace Alura.LeilaoOnline.WebApp.Controllers
         public IActionResult Pesquisa(string termo)
         {
             ViewData["termo"] = termo;
-            var leiloes = _context.Leiloes
-                .Include(l => l.Categoria)
-                .Where(l => string.IsNullOrWhiteSpace(termo) ||
-                    l.Titulo.ToUpper().Contains(termo.ToUpper()) ||
-                    l.Descricao.ToUpper().Contains(termo.ToUpper()) ||
-                    l.Categoria.Descricao.ToUpper().Contains(termo.ToUpper())
-                );
+            var leiloes = _dao.Pesquisa(termo);
             return View("Index", leiloes);
         }
     }
