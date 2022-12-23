@@ -34,3 +34,17 @@ Que estratégias utilizo para minimizar os acoplamentos ruins?
 
 De que maneira o AspNet Core ajuda a minimizar o acoplamento de nossos controladores e tipos em geral?
 
+´´´
+Crie abstrações e dependa delas para melhorar a qualidade do acoplamento. Esse hábito é formalizado através do Princípio da Inversão das Dependências (DIP), a letra D na sigla S.O.L.I.D.
+
+Explicite as dependências de uma classe. Uma das maneiras de fazer isso é usando parâmetros do construtor. Desse jeito aplicamos um conceito chamado Injeção de Dependência (DI). AspNet Core ajuda a injetar as dependências que foram vinculadas no método ConfigureServices() da classe Startup e assim dizemos que o AspNet Core tem como uma de suas principais funcionalidades ser um container de injeção de dependências.
+
+Quando a classe dependente deixa de resolver as dependências diretamente e cede esse controle para outrém temos o uso do conceito Inversão de Controle (IoC)
+´´´
+### Open/closed principle
+
+Mantenha sua aplicação fechada para mudanças, mas aberta para extensões
+Sempre manter o habito de criar novas classes quando quiser alterar algo
+*Service Layer* uma camada arquitetural que separa as regras de negócio das camadas mais externas
+Decorator - Uma classe nova chama a antiga com exceção das novas funcionalidades - https://en.wikipedia.org/wiki/Decorator_pattern
+ 

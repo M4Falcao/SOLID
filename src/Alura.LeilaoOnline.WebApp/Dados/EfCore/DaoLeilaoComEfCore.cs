@@ -11,49 +11,36 @@ namespace Alura.LeilaoOnline.WebApp.Dados.EfCore
     {
         // CLASSE DE OPERAÇÕES E ACESSOS AOS DADOS
         AppDbContext _context;
-        public DaoLeilaoComEfCore()
+
+        public DaoLeilaoComEfCore(AppDbContext context)
         {
-            _context = new AppDbContext();
-        }
-        public IEnumerable<Leilao> Index()
-        {
-            var leiloes = _context.Leiloes
-                .Include(l => l.Categoria);
-            return leiloes;
-        }
-        public IEnumerable<Leilao> Pesquisa(string termo)
-        {
-            var leiloes = _context.Leiloes
-                .Include(l => l.Categoria)
-                .Where(l => string.IsNullOrWhiteSpace(termo) ||
-                    l.Titulo.ToUpper().Contains(termo.ToUpper()) ||
-                    l.Descricao.ToUpper().Contains(termo.ToUpper()) ||
-                    l.Categoria.Descricao.ToUpper().Contains(termo.ToUpper())
-                );
-            return leiloes;
-        }
-        public IEnumerable<Categoria> BuscarCategorias()
-        {
-            return _context.Categorias.ToList();
+            _context = context;
         }
 
-        public Leilao BuscarPorId(int id)
+        public Leilao BuscarLeilaoPorId(int id)
         {
             return _context.Leiloes.Find(id);
         }
-        public void Inserir(Leilao model)
+
+        public IEnumerable<Leilao> BuscarTodosLeiloes() => _context.Leiloes.Include(l => l.Categoria);
+
+        public IEnumerable<Categoria> BuscarTodasCategorias() => _context.Categorias;
+
+        public void Incluir(Leilao obj)
         {
-            _context.Leiloes.Add(model);
+            _context.Leiloes.Add(obj);
             _context.SaveChanges();
         }
-        public void Editar(Leilao model)
+
+        public void Alterar(Leilao obj)
         {
-            _context.Leiloes.Update(model);
+            _context.Leiloes.Update(obj);
             _context.SaveChanges();
         }
-        public void Deleta(Leilao model)
+
+        public void Excluir(Leilao leilao)
         {
-            _context.Leiloes.Remove(model);
+            _context.Leiloes.Remove(leilao);
             _context.SaveChanges();
         }
     }
