@@ -46,7 +46,11 @@ Quando a classe dependente deixa de resolver as dependências diretamente e cede
 ![image](https://user-images.githubusercontent.com/73663282/209338087-95596b2e-e091-4b7e-8d73-98e958b8e90a.png)
 
 Mantenha sua aplicação fechada para mudanças, mas aberta para extensões
+
 Sempre manter o habito de criar novas classes quando quiser alterar algo
+
 *Service Layer* uma camada arquitetural que separa as regras de negócio das camadas mais externas
+
 Decorator - Uma classe nova chama a antiga com exceção das novas funcionalidades - https://en.wikipedia.org/wiki/Decorator_pattern
+
  
