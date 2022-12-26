@@ -16,9 +16,9 @@ Experiência de outros devs:
  ### Single responsibility principle
    Metodos e classes devem ter uma unica responabilidade (coesos)
 
-   ´´´
+   ```
    Ao escrever um módulo de software você precisa garantir que quando as mudanças forem solicitadas, elas só originem de uma pessoa ou grupo de pessoas representando uma função de negócio específica.
-   ´´´
+   ```
 
 ### Dependency inversion principle
 
@@ -35,7 +35,7 @@ Que estratégias utilizo para minimizar os acoplamentos ruins?
 De que maneira o AspNet Core ajuda a minimizar o acoplamento de nossos controladores e tipos em geral?
 
 
-´´´
+```
 
 Crie abstrações e dependa delas para melhorar a qualidade do acoplamento. Esse hábito é formalizado através do Princípio da Inversão das Dependências (DIP), a letra D na sigla S.O.L.I.D.
 
@@ -43,7 +43,7 @@ Explicite as dependências de uma classe. Uma das maneiras de fazer isso é usan
 
 Quando a classe dependente deixa de resolver as dependências diretamente e cede esse controle para outrém temos o uso do conceito Inversão de Controle (IoC)
 
-´´´
+```
 
 ### Open/closed principle
 
@@ -58,6 +58,8 @@ Sempre manter o habito de criar novas classes quando quiser alterar algo
 Decorator - Uma classe nova chama a antiga com exceção das novas funcionalidades - https://en.wikipedia.org/wiki/Decorator_pattern
 
  ### Liskov Substitution Principle && Interface Segregation Principle
+
+![image](https://user-images.githubusercontent.com/73663282/209551560-0ea2714b-3e2d-46ad-96ad-f008cc990dae.png)
 
  Manter a coesão entre interfaces
 
@@ -80,4 +82,7 @@ OCP. mantenha seu projeto aberto a mudanças mas fechado a alterações
 
 SRP. classes e métodos devem ter alta coesão
 ```
+
+![image](https://user-images.githubusercontent.com/73663282/209551542-87ef8283-c33d-4496-8a46-7c533b1af6f7.png)
+
 
