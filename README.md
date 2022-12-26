@@ -34,13 +34,17 @@ Que estratégias utilizo para minimizar os acoplamentos ruins?
 
 De que maneira o AspNet Core ajuda a minimizar o acoplamento de nossos controladores e tipos em geral?
 
+
 ´´´
+
 Crie abstrações e dependa delas para melhorar a qualidade do acoplamento. Esse hábito é formalizado através do Princípio da Inversão das Dependências (DIP), a letra D na sigla S.O.L.I.D.
 
 Explicite as dependências de uma classe. Uma das maneiras de fazer isso é usando parâmetros do construtor. Desse jeito aplicamos um conceito chamado Injeção de Dependência (DI). AspNet Core ajuda a injetar as dependências que foram vinculadas no método ConfigureServices() da classe Startup e assim dizemos que o AspNet Core tem como uma de suas principais funcionalidades ser um container de injeção de dependências.
 
 Quando a classe dependente deixa de resolver as dependências diretamente e cede esse controle para outrém temos o uso do conceito Inversão de Controle (IoC)
+
 ´´´
+
 ### Open/closed principle
 
 ![image](https://user-images.githubusercontent.com/73663282/209338087-95596b2e-e091-4b7e-8d73-98e958b8e90a.png)
@@ -53,4 +57,27 @@ Sempre manter o habito de criar novas classes quando quiser alterar algo
 
 Decorator - Uma classe nova chama a antiga com exceção das novas funcionalidades - https://en.wikipedia.org/wiki/Decorator_pattern
 
- 
+ ### Liskov Substitution Principle && Interface Segregation Principle
+
+ Manter a coesão entre interfaces
+
+ Sempre cumprir as promessas das implementações (LSP)
+
+ Não implemente funcionalidades que ainda não foram solicitadas! Essa idéia foi cunhada no acrônimo Y.A.G.N.I., You Aint Gonna Need It.
+
+ Sempre que possível busque separar as operações das interfaces em grupos menores. Essa idéia é o Princípio da Segregação das Interfaces (ISP)
+
+ CQRS (em português)
+
+```
+DIP. dependa de abstrações ao invés de classes concretas
+
+ISP. preocupe-se com coesão e acoplamento em suas interfaces
+
+LSP. cumpra as promessas definidas nas abstrações
+
+OCP. mantenha seu projeto aberto a mudanças mas fechado a alterações
+
+SRP. classes e métodos devem ter alta coesão
+```
+
