@@ -1,6 +1,6 @@
 # Projeto para o curso de SOLID com CSharp
 
-### Antes do SOLID
+## Antes do SOLID
 
 ![image](https://user-images.githubusercontent.com/73663282/206586715-f08e07f5-3701-44a4-86d1-228b2fda8b2c.png)
 
@@ -13,14 +13,18 @@ Experiência de outros devs:
     Princípios
     S.O.L.I.D
     
- ### Single responsibility principle
+ 
+
+## Single responsibility principle
    Metodos e classes devem ter uma unica responabilidade (coesos)
 
    ```
    Ao escrever um módulo de software você precisa garantir que quando as mudanças forem solicitadas, elas só originem de uma pessoa ou grupo de pessoas representando uma função de negócio específica.
    ```
 
-### Dependency inversion principle
+
+
+## Dependency inversion principle
 
 ![image](https://user-images.githubusercontent.com/73663282/207467654-699bd250-7cac-499a-8d42-1bba71a10f4d.png)
 
@@ -45,7 +49,9 @@ Quando a classe dependente deixa de resolver as dependências diretamente e cede
 
 ```
 
-### Open/closed principle
+
+
+## Open/closed principle
 
 ![image](https://user-images.githubusercontent.com/73663282/209338087-95596b2e-e091-4b7e-8d73-98e958b8e90a.png)
 
@@ -57,7 +63,9 @@ Sempre manter o habito de criar novas classes quando quiser alterar algo
 
 Decorator - Uma classe nova chama a antiga com exceção das novas funcionalidades - https://en.wikipedia.org/wiki/Decorator_pattern
 
- ### Liskov Substitution Principle && Interface Segregation Principle
+ 
+ 
+## Liskov Substitution Principle && Interface Segregation Principle
 
 ![image](https://user-images.githubusercontent.com/73663282/209551560-0ea2714b-3e2d-46ad-96ad-f008cc990dae.png)
 
@@ -72,15 +80,16 @@ Decorator - Uma classe nova chama a antiga com exceção das novas funcionalidad
  CQRS (em português)
 
 ```
-DIP. dependa de abstrações ao invés de classes concretas
-
-ISP. preocupe-se com coesão e acoplamento em suas interfaces
-
-LSP. cumpra as promessas definidas nas abstrações
+SRP. classes e métodos devem ter alta coesão
 
 OCP. mantenha seu projeto aberto a mudanças mas fechado a alterações
 
-SRP. classes e métodos devem ter alta coesão
+LSP. cumpra as promessas definidas nas abstrações
+
+ISP. preocupe-se com coesão e acoplamento em suas interfaces
+
+DIP. dependa de abstrações ao invés de classes concretas
+
 ```
 
 ![image](https://user-images.githubusercontent.com/73663282/209551542-87ef8283-c33d-4496-8a46-7c533b1af6f7.png)
